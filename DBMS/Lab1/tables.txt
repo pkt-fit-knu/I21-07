@@ -1,0 +1,38 @@
+CREATE DATABASE workers;
+
+\c workers
+
+CREATE TABLE employments_history
+(
+	employments_history_id SERIAL NOT NULL PRIMARY KEY,
+	number INTEGER,
+	seniority INTEGER
+);
+
+CREATE TABLE professions
+(
+	profession_id SERIAL NOT NULL PRIMARY KEY,
+	profession_name VARCHAR(50)
+);
+
+CREATE TABLE skills
+(
+	skill_id SERIAL NOT NULL PRIMARY KEY,
+	skill_name VARCHAR(50)
+);
+
+CREATE TABLE employees
+(
+	employee_id SERIAL NOT NULL PRIMARY KEY,
+	last_name VARCHAR(50),
+	first_name VARCHAR(50),
+	age INTEGER,
+	profession_id INTEGER NOT NULL REFERENCES professions(profession_id),
+	employments_history_id INTEGER NOT NULL REFERENCES employments_history(employments_history_id)
+);
+
+CREATE TABLE employees_skills
+(
+	employee_id INTEGER NOT NULL REFERENCES employees(employee_id),
+	skill_id INTEGER NOT NULL REFERENCES skills(skill_id)
+);

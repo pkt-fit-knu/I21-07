@@ -1,0 +1,23 @@
+INSERT INTO employments_history(number, seniority) VALUES(4578, 5);
+INSERT INTO employments_history(number, seniority) VALUES(3789, 10);
+INSERT INTO employments_history(number, seniority) VALUES(9891, 22);
+
+INSERT INTO professions(profession_name) VALUES('programmer');
+INSERT INTO professions(profession_name) VALUES('lawyer');
+
+INSERT INTO skills(skill_name) VALUES('programming');
+INSERT INTO skills(skill_name) VALUES('cooking');
+INSERT INTO skills(skill_name) VALUES('driving');
+INSERT INTO skills(skill_name) VALUES('drawing');
+INSERT INTO skills(skill_name) VALUES('swimming');
+
+INSERT INTO employees(last_name, first_name, age, profession_id, employments_history_id) VALUES('Smith', 'John', 43, 2, 3);
+INSERT INTO employees(last_name, first_name, age, profession_id, employments_history_id) VALUES('Jackson', 'Peter', 22, 1, 2);
+INSERT INTO employees(last_name, first_name, age, profession_id, employments_history_id) VALUES('Johnson', 'Jack', 39, 2, 1);
+
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(1, 2);
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(1, 4);
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(2, 5);
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(3, 1);
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(3, 3);
+INSERT INTO employees_skills(employee_id, skill_id) VALUES(3, 5);
