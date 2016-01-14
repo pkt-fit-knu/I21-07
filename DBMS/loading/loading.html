@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Loading Animation</title>
+		<style>
+			.thing
+            {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: #F2F2F2;
+				border: 1px solid black;
+				border-radius: 100%;
+			}
+		</style>
+		<script>
+            function Circle(x, y, radius)
+            {
+                this.centerPoint = new Point(x, y);
+                this.radius = radius;
+            }
+            
+            function Point(x, y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+
+            function Thing(angle, sourcePoint) 
+            {
+                var element = document.createElement('div');
+
+                element.setAttribute("class", "thing");
+
+                document.body.appendChild(element);
+                
+                this.element = element;
+                
+                this.targetPoint = new Point(0, 0);
+                
+                this.angle = angle;
+            }
+            
+            function animateLoading(circle, thing)
+            {
+                setInterval(function()
+                {
+                    if(thing.angle < Math.PI) 
+                    {
+                        thing.angle += 0.1;
+                    }
+                    else
+                    {
+                        thing.angle += 0.05;
+                    }
+                    
+                    if(thing.angle >= 2 * Math.PI)
+                    {
+                        thing.angle = 0;
+                    }
+
+                    thing.targetPoint.x = circle.centerPoint.x + Math.cos(thing.angle) * circle.radius;
+                    thing.targetPoint.y = circle.centerPoint.y + Math.sin(thing.angle) * circle.radius;
+
+                    thing.element.style.left = thing.targetPoint.x + "px";
+                    thing.element.style.top = thing.targetPoint.y + "px";
+                }, 10);
+            }
+            
+			function startLoading()
+			{
+                var circle = new Circle(650, 300, 30);
+                
+				var thing1 = new Thing(0);
+				var thing2 = new Thing(1);
+				var thing3 = new Thing(2);
+                var thing4 = new Thing(3);
+                var thing5 = new Thing(4);
+                
+                var things = [thing1, thing2, thing3, thing4, thing5];
+				
+                for(var i = 0; i < things.length; i++)
+                {
+				    animateLoading(circle, things[i]);
+                }
+			}
+		</script>
+	</head>
+    
+	<body onload="startLoading()">
+	</body>
+</html>
