@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas</title>
+		<style></style>
+		<script>
+            function Tree(rootColor, lowerColor, middleColor, upperColor)
+            {
+                var parentElement = document.createElement('div');
+                
+                document.body.appendChild(parentElement);
+
+                var element = document.createElement('canvas');
+
+                element.setAttribute("width", "1000");
+                element.setAttribute("height", "700");
+                
+                parentElement.appendChild(element);
+                
+                var canvasContext = element.getContext("2d");
+                
+                canvasContext.fillStyle = rootColor;
+                
+                canvasContext.fillRect(600, 500, 10, 100);
+                
+                canvasContext.fillStyle = lowerColor;
+                
+                canvasContext.beginPath();
+                canvasContext.moveTo(300, 500);
+                canvasContext.lineTo(610, 300);
+                canvasContext.lineTo(920, 500);
+                canvasContext.closePath();
+                
+                canvasContext.fill();
+                
+                canvasContext.fillStyle = middleColor;
+                
+                canvasContext.beginPath();
+                canvasContext.moveTo(400, 300);
+                canvasContext.lineTo(610, 150);
+                canvasContext.lineTo(820, 300);
+                canvasContext.closePath();
+                
+                canvasContext.fill();
+                
+                canvasContext.fillStyle = upperColor;
+                
+                canvasContext.beginPath();
+                canvasContext.moveTo(450, 150);
+                canvasContext.lineTo(610, 30);
+                canvasContext.lineTo(770, 150);
+                canvasContext.closePath();
+                
+                canvasContext.fill();
+            }
+            
+			function drawForest()
+			{
+                var tree1 = new Tree("#654321", "red", "blue", "#006400");
+                var tree2 = new Tree("#654321", "#006400", "yellow", "black");
+                var tree3 = new Tree("blue", "green", "#006400", "purple");
+			}
+		</script>
+	</head>
+    
+	<body onload="drawForest()">
+	</body>
+</html>
