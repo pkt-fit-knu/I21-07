@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tree</title>
+    </head>
+    
+    <body onclick="start()">
+        <svg height="1000" width="1000">
+            <svg id="parentRoot">
+                <path id="root" d="M600 600 L600 500 L620 500 L620 600 Z" fill="#654321" />
+            <svg>
+
+            <svg id="parentLower">
+                <path id="lower" d="M300 500 L610 300 L920 500 Z" fill="#006400" />
+            <svg>
+
+            <svg id="parentMiddle">
+                <path id="middle" d="M400 300 L610 150 L820 300 Z" fill="#006400" />
+            <svg>
+
+            <svg id="parentUpper">
+                <path id="upper" d="M450 150 L610 30 L770 150 Z" fill="#006400" />
+            <svg>
+        </svg>
+                
+        <script>
+            function Tree()
+            {
+                this.root = document.getElementById("root");
+                this.lower = document.getElementById("lower");
+                this.middle = document.getElementById("middle");
+                this.upper = document.getElementById("upper");
+                
+                this.root.parent = document.getElementById("parentRoot");
+                this.lower.parent = document.getElementById("parentLower");
+                this.middle.parent = document.getElementById("parentMiddle");
+                this.upper.parent = document.getElementById("parentUpper");
+            }
+            
+            function start()
+            {
+                var tree = new Tree();
+                
+                changeFillColor(tree.lower, "yellow");
+                changeFillColor(tree.middle, "purple");
+                changeOpacity(tree.upper, "0.5");
+                changeRootWidth();
+                changeLowerWidth();
+                changeMiddleWidth();
+                changeUpperWidth();
+                
+                function changeFillColor(treePart, color)
+                {
+                    treePart.setAttribute("fill", color);
+                }
+                
+                function changeStrokeColor(treePart, color, weight)
+                {
+                    treePart.setAttribute("stroke", color);
+                    treePart.setAttribute("stroke-width", weight);
+                }
+                
+                function changeOpacity(treePart, opacity)
+                {
+                    treePart.parent.setAttribute("opacity", opacity);
+                }
+                
+                function changeRootWidth()
+                {
+                    tree.root.setAttribute("d", "M500 600 L500 500 L720 500 L720 600 Z");
+                }
+                
+                function changeLowerWidth()
+                {
+                    tree.lower.setAttribute("d", "M200 500 L610 300 L1020 500 Z");
+                }
+                
+                function changeMiddleWidth()
+                {
+                    tree.middle.setAttribute("d", "M300 300 L610 150 L920 300 Z");
+                }
+                
+                function changeUpperWidth()
+                {
+                    tree.upper.setAttribute("d", "M350 150 L610 30 L870 150 Z");
+                }
+            }
+        </script>
+    </body>
+</html>
