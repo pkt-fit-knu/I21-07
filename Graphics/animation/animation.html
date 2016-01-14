@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Move to Position</title>
+            
+            <style type="text/css">
+                body 
+                {
+                    background-color: #F2F2F2;
+                }
+                .thing 
+                {
+                    position: absolute;
+                    transition-duration: 5s;
+                    transition-timing-function: linear;
+                }
+            </style>
+        </head>
+
+        <body onload="moveThing(things)">
+            <script>
+                function Point(x, y)
+                {
+                    this.x = x;
+                    this.y = y;
+                }
+                
+                function Thing(imageSrc, sourcePoint, targetPoint) 
+                {
+                    var parentElement = document.createElement('div');
+                
+                    parentElement.setAttribute("class", "thing");
+                    
+                    parentElement.style.left = sourcePoint.x + "px";
+                    parentElement.style.top = sourcePoint.y + "px";
+                    
+                    document.body.appendChild(parentElement);
+                    
+                    var childElement = document.createElement('img');
+                    
+                    childElement.setAttribute("src", imageSrc);
+                    
+                    parentElement.appendChild(childElement);
+                                     
+                    this.element = parentElement;
+                    
+                    this.imageSrc = imageSrc;
+                    
+                    this.sourcePoint = sourcePoint;
+                    this.targetPoint = targetPoint;
+                }
+                
+                var thing1 = new Thing("http://www.kirupa.com/images/smiley_red.png", new Point(50, 50), new Point(500, 50));
+                
+                var thing2 = new Thing("http://www.kirupa.com/images/smiley_red.png", new Point(500, 50), new Point(500, 500));
+                
+                var thing3 = new Thing("http://www.kirupa.com/images/smiley_red.png", new Point(500, 500), new Point(50, 500));
+                
+                var thing4 = new Thing("http://www.kirupa.com/images/smiley_red.png", new Point(50, 500), new Point(50, 50));
+                
+                var things = [thing1, thing2, thing3, thing4];
+
+                function moveThing(things) 
+                {
+					for(var i = 0; i < things.length; i++)
+					{
+						things[i].element.style.left = things[i].targetPoint.x + "px";
+						things[i].element.style.top = things[i].targetPoint.y + "px";
+					}
+                }
+            </script>
+        </body>
+    </html>
