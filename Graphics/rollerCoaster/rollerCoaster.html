@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+    <html> 
+        <head> 
+            <title>Roller Coaster</title> 
+        </head> 
+
+        <body onload="startRollerCoaster()"> 
+            <script> 
+                function RollerCoaster(context) 
+                { 
+                    var point = new Point(10, 300); 
+                    var increment = 0; 
+
+                    this.points = []; 
+                    var pointsCount = -1; 
+
+                    for(i = 10; i <= 1350; i += 10) 
+                    { 
+                        context.moveTo(point.x, point.y); 
+
+                        point.x = i + Math.random() * (10 - 2) + 2; 
+                        point.y = 300 - Math.sin(increment) * 150;
+                        
+                        this.points[pointsCount++] = new Point(point.x, point.y, increment); 
+                        
+                        increment += Math.PI * 0.1; 
+                        
+                        context.lineTo(point.x, point.y); 
+                        context.stroke(); 
+                    } 
+                } 
+
+                function Machine(speed, context, color) 
+                { 
+                    this.speed = speed;
+                    context.strokeStyle = color;
+                } 
+
+                function Point(x, y, angle) 
+                { 
+                    this.x = x; 
+                    this.y = y; 
+                    this.angle = angle; 
+                } 
+
+                function startRollerCoaster() 
+                { 
+                    var element = document.createElement("canvas"); 
+                    element.setAttribute("width", "1350"); 
+                    element.setAttribute("height", "625"); 
+                    document.body.appendChild(element); 
+                    var context = element.getContext("2d"); 
+
+                    var rollerCoaster = new RollerCoaster(context); 
+                    
+                    var canvasData = context.getImageData(0, 0, element.width, element.height);
+
+                    var machine = new Machine(10, context, "#FF0000");  
+                    
+                    context.lineWidth = 10;
+
+                    var counter = -1; 
+
+                    setInterval(function() 
+                    { 
+                        if(Math.sin(rollerCoaster.points[counter].angle) != -1 || (machine.speed < -1 || machine.speed > 1))
+                        {
+                            context.putImageData(canvasData, 0, 0);
+                            
+                            if(Math.sin(rollerCoaster.points[counter + 1].angle) > Math.sin(rollerCoaster.points[counter].angle)) 
+                            { 
+                                machine.speed -= 0.75; 
+                            } 
+                            else if(Math.sin(rollerCoaster.points[counter + 1].angle) < Math.sin(rollerCoaster.points[counter].angle)) 
+                            { 
+                                machine.speed += 0.5; 
+                            } 
+
+                            if(machine.speed > 0) 
+                            { 
+                                counter++; 
+
+                                context.beginPath();
+                                context.moveTo(rollerCoaster.points[counter].x, rollerCoaster.points[counter].y); 
+                                context.lineTo(rollerCoaster.points[counter + 1].x, rollerCoaster.points[counter + 1].y);
+                                context.stroke();
+                            } 
+                            else if(machine.speed <= 0) 
+                            { 
+                                counter--; 
+
+                                machine.speed += 0.275; 
+
+                                context.beginPath();
+                                context.moveTo(rollerCoaster.points[counter].x, rollerCoaster.points[counter].y); 
+                                context.lineTo(rollerCoaster.points[counter + 1].x, rollerCoaster.points[counter + 1].y);
+                                context.stroke();
+                            }
+                        }
+                    }, 75); 
+                } 
+            </script> 
+        </body> 
+</html>+
