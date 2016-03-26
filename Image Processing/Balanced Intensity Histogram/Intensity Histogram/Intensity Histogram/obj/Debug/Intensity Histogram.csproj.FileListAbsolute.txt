@@ -1,0 +1,17 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity_Histogram.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\khkjhk\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\bin\Debug\Intensity Histogram.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity_Histogram.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\ImageToHistogram.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Intensity Histogram\Intensity Histogram\obj\Debug\Intensity Histogram.csprojResolveAssemblyReference.cache
